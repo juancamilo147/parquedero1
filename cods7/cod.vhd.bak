@@ -1,0 +1,20 @@
+library ieee;
+use ieee.std_logic_vector.all;
+use ieee.std_logic_1164.all;
+entity cod is
+	port(
+	v: in std_logic_vector(7 downto 0)
+	f: out std_logic_vector(3 downto 0));
+end cod;
+architecture RTL of cod is
+begin 
+	f	<= "0000" when v = "00000001" else
+			"0001" when v = "00000010" else 
+			"0010" when v = "00000100" else 
+			"0011" when v = "00001000" else
+			"0100" when v = "00010000" else
+			"0101" when v = "00100000" else
+			"0110" when v = "01000000" else
+			"0111" when v = "10000000" else
+			"1111";
+end RTL 
